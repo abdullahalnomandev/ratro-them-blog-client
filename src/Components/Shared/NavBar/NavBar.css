@@ -1,0 +1,10 @@
+.nav-items a{
+
+    color: white !important;
+}  
+
+.active, .nav-items link:visited{
+
+    border-bottom: 2px solid #d8d410;
+    
+}

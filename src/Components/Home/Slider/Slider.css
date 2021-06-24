@@ -1,0 +1,18 @@
+.text{
+    text-align: justify;
+}
+ul.control-dots {
+    display: none;
+}
+
+.image:hover{
+
+    transform: scaleX(1.4);
+}
+
+@media screen and (max-width: 768px) {
+    .carosal {
+      background-color: olive;
+      display: none;
+    }
+  }
