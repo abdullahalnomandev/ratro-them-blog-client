@@ -1,5 +1,5 @@
 form.login-form {
-    width: 483px;
+    max-width: 483px;
     margin: auto;
     border-radius: 7px;
     padding: 48px;
@@ -12,12 +12,13 @@ form.login-form input {
     background-color: #ddd;  
     padding: 19px;
     width: 20;
-    width: 377px;
+   max-width: 377px;
 }
 
 .rounded{
     background-color: #20c52e !important;
     border: 2px solid green;
+    width: 100%;
 }
 .from-con{
     background-color: #f0f2f5;
