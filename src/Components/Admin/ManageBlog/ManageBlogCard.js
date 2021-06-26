@@ -10,7 +10,7 @@ const ManageBlogCard = (props) => {
     const deletEventHandler = (_id, e) => {
 
         console.log(_id);
-        fetch(`http://localhost:5000/delete/${_id}`, {
+        fetch(`https://mighty-refuge-87011.herokuapp.com/delete/${_id}`, {
             method: 'DELETE'
         })
 

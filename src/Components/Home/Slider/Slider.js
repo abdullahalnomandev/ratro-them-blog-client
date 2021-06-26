@@ -11,7 +11,7 @@ const Slider = () => {
     const [slider, setSlider] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/blogsAll')
+        fetch('https://mighty-refuge-87011.herokuapp.com/blogsAll')
             .then(res => res.json())
             .then(data => setSlider(data))
     }, [])

@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import './Sidebar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCog, faSignOutAlt, faPlus, faUser, faTasks, faList, faHome } from '@fortawesome/free-solid-svg-icons';
+import { faSignOutAlt, faPlus, faHome } from '@fortawesome/free-solid-svg-icons';
 import { faMandalorian } from '@fortawesome/free-brands-svg-icons';
 import { UserContext } from '../../../App';
 

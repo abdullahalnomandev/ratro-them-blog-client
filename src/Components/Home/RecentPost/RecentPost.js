@@ -14,7 +14,7 @@ const RecentPost = () => {
     const [blogs, setBlogs] = useState([]);
     useEffect(() => {
 
-        const url = `http://localhost:5000/blogs?search=${search}`;
+        const url = `https://mighty-refuge-87011.herokuapp.com/blogs?search=${search}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setBlogs(data))

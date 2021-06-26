@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Sidebar from '../Sidebar/Sidebar';
 import { useForm } from "react-hook-form";
 import './AddBlog.css';
@@ -20,7 +20,7 @@ const AddBlog = () => {
             date: new Date()
         }
 
-        const url = `http://localhost:5000/addBlog`;
+        const url = `https://mighty-refuge-87011.herokuapp.com/addBlog`;
         fetch(url, {
             method: 'POST',
             headers: {
