@@ -1,0 +1,25 @@
+form.login-form {
+    width: 483px;
+    margin: auto;
+    border-radius: 7px;
+    padding: 48px;
+    background-color: #ffffff;
+    box-shadow: 10px 10px 30px 14px #ddd;
+
+}
+
+form.login-form input {
+    background-color: #ddd;  
+    padding: 19px;
+    width: 20;
+    width: 377px;
+}
+
+.rounded{
+    background-color: #20c52e !important;
+    border: 2px solid green;
+}
+.from-con{
+    background-color: #f0f2f5;
+    min-height: 100vh;
+}

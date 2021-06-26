@@ -15,7 +15,6 @@ const Home = () => {
             <Sliders />
             <RecentPost />
             <Footer />
-            
         </>
     );
 };

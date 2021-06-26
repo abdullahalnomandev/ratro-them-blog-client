@@ -4,3 +4,20 @@
 .formInfo{
     background-color: #6cdf6a;
 }
+input.blog-btn {
+    background-color: blue;
+    padding: 10px;
+    width: 70%;
+    color: white;
+    border-radius: 6px;
+    border: 1px solid green;
+    background-color: #17861d;
+    transition: .3s;
+}
+.admin-sidebar{
+    min-height: 100vh;
+}
+input.blog-btn:hover{
+    background-color: #0f4913;
+    transition: .3s;
+}

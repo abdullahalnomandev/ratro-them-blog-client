@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <div style={{backgroundColor:'#3cc55c'}} >
+        <div style={{ backgroundColor: '#3cc55c' }} >
             <div className="container p-5">
                 <div className="text-center">
                     <h3 className="text-warning">Let's make this inbox official</h3>

@@ -4,39 +4,57 @@ import NavBar from '../Shared/NavBar/NavBar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faPinterest, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import './BlogDetails.css'
+import { useEffect } from 'react';
+import { useState } from 'react';
+import Footer from '../Shared/Footer/Footer';
+import Aos from 'aos';
 
 const BlogDetails = () => {
 
     const { id } = useParams();
+    const [blogDetails, setBlogDetails] = useState([]);
+    useEffect(() => {
+
+        fetch('http://localhost:5000/blogsAll')
+            .then(res => res.json())
+            .then(data => setBlogDetails(data))
+    }, [])
+
+    const singleBlog = blogDetails.find(blog => blog._id === id);
+    console.log(singleBlog);
+    console.log(singleBlog?.title);
+    const stringDate = new Date(singleBlog?.date).toDateString('dd/MM/YY')
+    const slice = singleBlog?.content.slice(0, 340)
+
+    Aos.init()
 
     return (
         <>
             <NavBar />
+
             <div className="container mt-5">
-                <p className="text-secondary">Biyans Who . <span>July 27,20-19</span></p>
-                <h1 >Hipster Cafes in Bandung You Need to Visit </h1>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet iure qui sapiente libero. Quod officia voluptatem ea neque assumenda.</p>
+                <p className="text-secondary">Biyans Who . <span>{stringDate}</span></p>
+                <h1 >{singleBlog?.title}</h1>
+                <p>{slice}</p>
 
                 <div className="social-icon">
 
-                    <a className="facebook" href="https://facebook.com">Share <FontAwesomeIcon icon={faFacebook} />
-                        </a>
-
-                    <a className="tweeter" href="https://facebook.com">Tweet <FontAwesomeIcon icon={faTwitter} />
-                        </a>
-                    <a className="pinterest" href="https://facebook.com">Pinterest <FontAwesomeIcon icon={faPinterest} />
-                        </a>
-
+                    <a className="facebook" target="_blank" href="https://facebook.com">Share <FontAwesomeIcon icon={faFacebook} />
+                    </a>
+                    <a className="tweeter" target="_blank" href="https://twitter.com">Tweet <FontAwesomeIcon icon={faTwitter} />
+                    </a>
+                    <a className="pinterest" target="_blank" href="https://www.pinterest.de/">Pinterest <FontAwesomeIcon icon={faPinterest} />
+                    </a>
 
                 </div>
+                <div data-aos="zoom-in"
+                    data-aos-duration="3000" className="blog-details">
+                    <img style={{ height: "500px" }} className="img-fluid w-50 my-5" src={singleBlog?.imageUrl} alt="" />
 
-                <div className="blog-details">
-                    <img className="img-fluid w-50 my-5" src="https://1.bp.blogspot.com/-CWx5MNqZZ3c/XSscmSQM65I/AAAAAAAANes/VPcHo3HSI-8z04tx_NTUVnMX1fR8BmeewCPcBGAYYCw/s1600/photo-1523592121529-f6dde35f079e.jpeg" alt="" />
-
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure placeat, mollitia rem recusandae alias ratione. Delectus quasi deserunt eum hic, expedita recusandae magni vel optio reprehenderit repellendus nulla, corporis nemo est provident reiciendis, quas ullam corrupti quae non animi modi! Omnis architecto ex recusandae dolor dolorum eaque alias earum consequuntur.</p>
+                    <p>{singleBlog?.content}</p>
                 </div>
             </div>
-
+            <Footer />
         </>
     );
 };
